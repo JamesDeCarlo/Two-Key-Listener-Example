@@ -7,10 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 /**
- * This Class is an example of two buttons being pressed. In this example we 
- * use shift+enter. But can be modified for any key combinations including 3
- * key combinations or more.
- * 
+ * This Class is an example of two keys being pressed. In this example we use
+ * shift+enter. But can be modified for any key combinations including 3 key
+ * combinations or more.
+ *
  * @author James DeCarlo
  */
 public class TwoKeyListenerExample extends JFrame implements KeyListener {
@@ -49,9 +49,8 @@ public class TwoKeyListenerExample extends JFrame implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
             shiftPressed = true;
-        }
-        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-            if(shiftPressed){
+        } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (shiftPressed) {
                 this.label.setText("  Shift + Enter Pressed");
             } else {
                 this.label.setText("  Enter Pressed");
@@ -63,8 +62,7 @@ public class TwoKeyListenerExample extends JFrame implements KeyListener {
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
             shiftPressed = false;
-        }
-        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+        } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             this.label.setText("  Press enter or shift+enter");
         }
     }
